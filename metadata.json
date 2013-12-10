@@ -1,0 +1,12 @@
+{
+  "description": "Module for provisioning vagrant servers",
+  "summary": "Puppet module provisioning vagrant servers",
+  "author": "ammonkc",
+  "source": "git://github.com/ammonkc/puppet-server.git",
+  "project_page": "https://github.com/ammonkc/puppet-server",
+  "name": "ammonkc-server",
+  "checksums": {},
+  "dependencies": [],
+  "license": "Apache 2.0",
+  "version": "0.0.1"
+}
