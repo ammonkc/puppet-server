@@ -9,7 +9,7 @@
 # Sample Usage:
 #  include server::node-js
 #
-define server::node-js {
+class server::node-js {
     #------------------------------------------
     # Node.js
     #------------------------------------------

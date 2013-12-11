@@ -9,7 +9,7 @@
 # Sample Usage:
 #  include server::php
 #
-define server::php (
+class server::php (
     $install_composer    = true
 ) {
     #------------------------------------------

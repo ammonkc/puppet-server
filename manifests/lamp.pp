@@ -9,7 +9,7 @@
 # Sample Usage:
 #  include server::lamp
 #
-define server::lamp (
+class server::lamp (
     $httpd    = true,
     $php      = true,
     $mysql    = true,

@@ -9,7 +9,7 @@
 # Sample Usage:
 #  include server::httpd
 #
-define server::httpd (
+class server::httpd (
     $server_name    = $::server::params::server_name,
     $docroot        = $::server::params::docroot,
     $dir_options    = $::server::params::dir_options,
