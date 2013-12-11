@@ -6,7 +6,24 @@
   "project_page": "https://github.com/ammonkc/puppet-server",
   "name": "ammonkc-server",
   "checksums": {},
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "example42/apache",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "example42/php",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "puppetlabs/mysql",
+      "version_requirement": ">=2.0.0"
+    },
+    {
+      "name": "puppetlabs/nodejs",
+      "version_requirement": ">=0.4.0"
+    }
+  ],
   "license": "Apache 2.0",
   "version": "0.0.1"
 }
