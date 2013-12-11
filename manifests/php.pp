@@ -18,7 +18,7 @@ class server::php (
     # Install remi repo
     class { 'repo::remi': stage => pre; }
     # Install php modules
-    class { 'php': }
+    # class { 'php': }
     php::module {
         [
             'pear',
