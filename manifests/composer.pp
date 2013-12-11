@@ -26,11 +26,11 @@
 #   }
 #
 class server::composer (
-  $target_dir   = $server::comp_target_dir,
-  $command_name = $server::comp_command_name,
-  $user         = $server::comp_user,
+  $target_dir   = $server::params::comp_target_dir,
+  $command_name = $server::params::comp_command_name,
+  $user         = $server::params::comp_user,
   $auto_update  = false
-) {
+) inherits server::params {
 
   $composer_target_dir = $target_dir ? {
     'UNDEF' => $::server::params::comp_target_dir,
