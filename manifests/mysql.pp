@@ -10,21 +10,25 @@
 #  include server::mysql
 #
 class server::mysql (
-    $enabled    = true,
+    $db_root_pass = '$server::params::db_root_pass'
+    $db_name      = '$server::params::db_name'
+    $db_user      = '$server::params::db_user'
+    $db_pass      = '$server::params::db_pass'
+    $db_host      = '$server::params::db_host'
 ) {
     #------------------------------------------
     # MySQL
     #------------------------------------------
     class { '::mysql::server':
-        root_password => 'Dbr00+'
+        root_password => $db_root_pass
     }
     class { '::mysql::bindings':
         php_enable => true
     }
-    mysql::db { "vagrant":
-        user        => "vagrant",
-        password    => "vagrantDbr00+",
-        host        => 'localhost',
+    mysql::db { "${db_name}":
+        user        => $db_user,
+        password    => $db_pass,
+        host        => $db_host,
         grant       => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'DROP', 'ALTER', 'EXECUTE'],
         # sql         => "/var/www/html/${fqdn}/app/database/${mysql_db}.sql"
     }

@@ -9,16 +9,11 @@
 # Sample Usage:
 #  include server::node-js
 #
-class server::node-js (
-    $enabled    = true,
-) {
+class server::node-js {
     #------------------------------------------
     # Node.js
     #------------------------------------------
-    info("Installing Node.js")
     # Nodejs module - Install node.js
-    # register run stages
-    # class { 'nodejs': stage => pre-node; }
     include nodejs
 
     #------------------------------------------

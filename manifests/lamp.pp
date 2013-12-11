@@ -10,9 +10,24 @@
 #  include server::lamp
 #
 class server::lamp (
-    $enabled    = true,
+    $httpd    = true,
+    $php      = true,
+    $mysql    = true,
+    $nodejs   = true,
 ) {
-    include server::httpd
-    include server::php
-    include server::mysql
+    if $httpd == true {
+        include server::httpd
+    }
+
+    if $php == true {
+        include server::php
+    }
+
+    if $mysql == true {
+        include server::mysql
+    }
+
+    if $nodejs == true {
+        include server::node-js
+    }
 }

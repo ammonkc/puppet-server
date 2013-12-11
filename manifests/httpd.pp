@@ -10,22 +10,23 @@
 #  include server::httpd
 #
 class server::httpd (
-    $enabled    = true,
+    $server_name    = $server::params::server_name,
+    $docroot        = $server::params::docroot,
+    $dir_options    = $server::params::dir_options
+    $dir_override   = $server::params::dir_override
 ) {
     #------------------------------------------
     # Apache
     #------------------------------------------
-    info("Configure LAMP Stack")
-
     class { "apache": }
-    apache::vhost { "${fqdn}":
+    apache::vhost { "${server_name}":
             port                        => '80',
-            server_name                 => "${fqdn}",
-            docroot                     => "/var/www/html/${fqdn}/public",
-            directory                   => "/var/www/html/${fqdn}/public",
-            directory_options           => '-Indexes -Includes -FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews',
-            directory_allow_override    => 'All',
-            require                     => File["/var/www/html/${fqdn}"],
+            server_name                 => "${server_name}",
+            docroot                     => "${docroot}",
+            directory                   => "${docroot}",
+            directory_options           => "${dir_options}",
+            directory_allow_override    => "${dir_override}",
+            require                     => File["/var/www/html/${server_name}"],
     }
 
     # Setting up the document root
@@ -34,7 +35,7 @@ class server::httpd (
     }
 
     # symlink the vagrant shared folder to the document root
-    file { "/var/www/html/${fqdn}":
+    file { "/var/www/html/${server_name}":
         ensure  => "link",
         target  => "/vagrant",
         require => Package["httpd"],

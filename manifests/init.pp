@@ -2,7 +2,7 @@
 # Configure repos
 ##############################################################################
 
-class server {
-    include server::params
+class server inherits server::params {
+    # include server::params
 }
 

@@ -10,7 +10,7 @@
 #  include server::php
 #
 class server::php (
-    $enabled    = true,
+    $install_composer    = true,
 ) {
     #------------------------------------------
     # PHP
@@ -33,8 +33,10 @@ class server::php (
         ]:
     }
 
-    class { 'composer':
-      command_name => 'composer',
-      target_dir   => '/usr/local/bin'
+    if $install_composer == true {
+        class { 'server::composer':
+          command_name => 'composer',
+          target_dir   => '/usr/local/bin'
+        }
     }
 }
