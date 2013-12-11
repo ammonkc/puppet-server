@@ -25,5 +25,6 @@ class server::node-js {
     package { $node_pkgs:
       ensure   => present,
       provider => 'npm',
+      require => Package['nodejs']
     }
 }
