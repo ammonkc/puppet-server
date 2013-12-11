@@ -3,19 +3,19 @@
 ##############################################################################
 
 class server (
-    $server_name        = params_lookup( 'server_name' ),
-    $docroot            = params_lookup( 'docroot' ),
-    $dir_options        = params_lookup( 'dir_options' ),
-    $dir_override       = params_lookup( 'dir_override' ),
-    $db_root_pass       = params_lookup( 'db_root_pass' ),
-    $db_name            = params_lookup( 'db_name' ),
-    $db_user            = params_lookup( 'db_user' ),
-    $db_pass            = params_lookup( 'db_pass' ),
-    $db_host            = params_lookup( 'db_host' ),
-    $comp_phar_location = params_lookup( 'comp_phar_location' ),
-    $comp_target_dir    = params_lookup( 'comp_target_dir' ),
-    $comp_command_name  = params_lookup( 'comp_command_name' ),
-    $comp_user          = params_lookup( 'comp_user' )
+    $server_name        = $server::params::server_name,
+    $docroot            = $server::params::docroot,
+    $dir_options        = $server::params::dir_options,
+    $dir_override       = $server::params::dir_override,
+    $db_root_pass       = $server::params::db_root_pass,
+    $db_name            = $server::params::db_name,
+    $db_user            = $server::params::db_user,
+    $db_pass            = $server::params::db_pass,
+    $db_host            = $server::params::db_host,
+    $comp_phar_location = $server::params::comp_phar_location,
+    $comp_target_dir    = $server::params::comp_target_dir,
+    $comp_command_name  = $server::params::comp_command_name,
+    $comp_user          = $server::params::comp_user
 ) inherits server::params {
 
 }
