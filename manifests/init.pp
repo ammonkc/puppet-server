@@ -3,6 +3,6 @@
 ##############################################################################
 
 class server inherits server::params {
-    # include server::params
+
 }
 
