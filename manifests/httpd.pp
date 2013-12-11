@@ -9,11 +9,11 @@
 # Sample Usage:
 #  include server::httpd
 #
-class server::httpd (
-    $server_name    = $server::params::server_name,
-    $docroot        = $server::params::docroot,
-    $dir_options    = $server::params::dir_options,
-    $dir_override   = $server::params::dir_override,
+define server::httpd (
+    $server_name    = $::server::params::server_name,
+    $docroot        = $::server::params::docroot,
+    $dir_options    = $::server::params::dir_options,
+    $dir_override   = $::server::params::dir_override
 ) {
     #------------------------------------------
     # Apache

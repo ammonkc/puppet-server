@@ -9,8 +9,8 @@
 # Sample Usage:
 #  include server::php
 #
-class server::php (
-    $install_composer    = true,
+define server::php (
+    $install_composer    = true
 ) {
     #------------------------------------------
     # PHP

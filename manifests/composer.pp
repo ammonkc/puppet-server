@@ -26,9 +26,9 @@
 #   }
 #
 class server::composer (
-  $target_dir   = $server::params::comp_target_dir,
-  $command_name = $server::params::comp_command_name,
-  $user         = $server::params::comp_user,
+  $target_dir   = $::server::params::comp_target_dir,
+  $command_name = $::server::params::comp_command_name,
+  $user         = $::server::params::comp_user,
   $auto_update  = false
 ) {
 

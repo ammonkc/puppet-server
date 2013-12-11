@@ -9,12 +9,12 @@
 # Sample Usage:
 #  include server::mysql
 #
-class server::mysql (
-    $db_root_pass = '$server::params::db_root_pass',
-    $db_name      = '$server::params::db_name',
-    $db_user      = '$server::params::db_user',
-    $db_pass      = '$server::params::db_pass',
-    $db_host      = '$server::params::db_host',
+define server::mysql (
+    $db_root_pass = $::server::params::db_root_pass,
+    $db_name      = $::server::params::db_name,
+    $db_user      = $::server::params::db_user,
+    $db_pass      = $::server::params::db_pass,
+    $db_host      = $::server::params::db_host
 ) {
     #------------------------------------------
     # MySQL
