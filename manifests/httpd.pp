@@ -10,10 +10,10 @@
 #  include server::httpd
 #
 class server::httpd (
-    $server_name    = $::server::params::server_name,
-    $docroot        = $::server::params::docroot,
-    $dir_options    = $::server::params::dir_options,
-    $dir_override   = $::server::params::dir_override
+    $server_name    = $server::server_name,
+    $docroot        = $server::docroot,
+    $dir_options    = $server::dir_options,
+    $dir_override   = $server::dir_override
 ) {
     #------------------------------------------
     # Apache
