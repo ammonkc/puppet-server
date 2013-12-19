@@ -26,8 +26,4 @@ class server::lamp (
     if $mysql == true {
         include server::mysql
     }
-
-    if $nodejs == true {
-        include server::node-js
-    }
 }
