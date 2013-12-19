@@ -14,7 +14,7 @@ class server::node-js {
     # Node.js
     #------------------------------------------
     # Nodejs module - Install node.js
-    include nodejs
+    class { 'nodejs': stage => main; }
 
     #------------------------------------------
     # npm packages
@@ -23,8 +23,9 @@ class server::node-js {
         'less'
     ]
     package { $node_pkgs:
-      ensure   => present,
-      provider => 'npm',
-      require => Package['nodejs']
+        stage    => post,
+        ensure   => present,
+        provider => 'npm',
+        require  => Package['nodejs']
     }
 }
