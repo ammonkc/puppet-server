@@ -25,6 +25,7 @@ class server::php (
             'mcrypt',
             'mbstring',
             'mysql',
+            'pdo',
             'gd',
             'xml',
             'bcmath',

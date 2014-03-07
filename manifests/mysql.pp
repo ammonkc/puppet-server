@@ -30,7 +30,7 @@ class server::mysql (
         password    => $db_pass,
         host        => $db_host,
         grant       => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'DROP', 'ALTER', 'EXECUTE'],
-        # sql         => "/var/www/html/${fqdn}/app/database/${mysql_db}.sql"
+        sql         => "/var/www/html/${fqdn}/${mysql_db}.sql"
     }
 
 }
