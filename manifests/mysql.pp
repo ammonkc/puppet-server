@@ -25,12 +25,5 @@ class server::mysql (
     class { '::mysql::bindings':
         php_enable => true
     }
-    mysql::db { "${db_name}":
-        user        => $db_user,
-        password    => $db_pass,
-        host        => $db_host,
-        grant       => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'DROP', 'ALTER', 'EXECUTE'],
-        sql         => "/var/www/html/${fqdn}/${mysql_db}.sql"
-    }
 
 }

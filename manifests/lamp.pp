@@ -25,5 +25,8 @@ class server::lamp (
 
     if $mysql == true {
         include server::mysql
+        if $mysql_db != undef {
+            include server::mysql::db
+        }
     }
 }

@@ -11,6 +11,7 @@ class server::params {
     $db_name      = 'vagrant'
     $db_user      = 'vagrant'
     $db_pass      = 'vagrantDbr00+'
+    $db_sql       = false
     $db_host      = 'localhost'
 
     # Composer params
